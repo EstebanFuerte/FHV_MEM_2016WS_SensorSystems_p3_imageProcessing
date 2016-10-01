@@ -1,51 +1,37 @@
-% FHV - Master in Meachatronics - Sem 3 - Sensor System - Image Processing
+% FHV - Master in Meachatronics
+% Sensor System - Image Processing
 %
-% Exersice: Gradient
+% Exersice: Hough Transform (slide 4)
 %
 % Author:   Stefan Stark
-% Date:     22.09.2016
+% Date:     01.10.2016
 
 clear all, close all, clc;
 
-%% Read Image
-I = imread('coins.png');
-I = im2double(I);
-figure; imshow(I);              % shows the image
+%% Given points
+P1 = [1;2]; P2 = [2;3]; P3 = [3;4]; P4 = [3;3];
 
-%% Smooth Image (Gaussian Filter)
-F = fspecial('Gaussian',5,2);  % in time domains the calculation time
-                                % depends square time with the size of the
-                                % filter. eh filter of size leads to 25
-                                % calculations per pixel.
-figure; surf(F);                % plots 3-D colored surface
-I1 = imfilter(I,F);
-figure; imshow(I1);             % shows the smoothed image
-
-%% Differentiation (Prewitt-Filter)
-Fp_y = fspecial('prewitt');     % create prewitt filter mask for y dir.
-Fp_x = Fp_y';                   % create prewitt filter mask for x dir.
-
-gy = imfilter(I,Fp_y);
-gx = imfilter(I,Fp_x);
 figure; 
-subplot(2,1,1); imshow(gy,[]);
-subplot(2,1,2); imshow(gx,[]);
+plot(P1(1),P1(2),'o',P2(1),P2(2),'o',P3(1),P3(2),'o',P4(1),P4(2),'o');
 
-%% Show gradient as Vector
-figure; quiver(gx,gy)           % without the smoothing, the gradients
-                                % would be much more chaotic
-zoom(4);
+%% Draw the points as lines in the parameter space (b=-a*x+y)
+a = linspace(-1,5);
+for i=1:length(a)
+    b1(i) = -P1(1)*a(i)+P1(2);
+    b2(i) = -P2(1)*a(i)+P2(2);
+    b3(i) = -P3(1)*a(i)+P3(2);
+    b4(i) = -P4(1)*a(i)+P4(2);
+end
+figure;
+plot(a,b1,a,b2,a,b3,a,b4); xlabel('a'),ylabel('b');grid on;
+title('Lines in parameter space');
 
-%% Show Magnitude of Gradient
-M = abs(gx)+abs(gy);            
-M = sqrt(gx.*gx+gy.*gy);        % another method to calculate the gradient
-figure; imshow(M,[])
-colormap(copper)
-colorbar;
-
-
-%% notes
-% .* operation -> Elementwise operation
-% [2 1] [7 2] vektor multiplikation is not possible, we would like to mult.
-% elementwise so the result should be: [2*7 1*2]=[14 2]
-
+%% Find the intersection points in the parameter space and determine 
+%% corresponding lines in the xy plane
+% manual readout -> intersection of 3 lines at a'=1,b'=1
+x = linspace(0,3);
+y=1*x+1;
+figure; 
+plot(x,y);title('Data points & corresponding line');xlabel('x');ylabel('y');
+hold on;
+plot(P1(1),P1(2),'o',P2(1),P2(2),'o',P3(1),P3(2),'o',P4(1),P4(2),'o');
