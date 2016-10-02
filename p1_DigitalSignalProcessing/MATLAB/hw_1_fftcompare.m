@@ -11,7 +11,7 @@ function y = fftcompare( x )
     f  = linspace( 0, fs, N+1 ) ;
     f(N+1) = [] ;
 
-    X  = my_dft( x ) ;
+    X  = hw_1_my_dft( x ) ;
     XF =    fft( x ) ;
     figure
     subplot( 2, 1, 1 ) ;
