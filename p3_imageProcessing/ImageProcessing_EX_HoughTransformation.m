@@ -14,12 +14,12 @@ I_gray = rgb2gray(I);
 %figure; imshow(I_gray);              % shows the image
 
 %% Canny Edge detector to find edges
-I=edge(I_gray,'canny',[0.005,0.05]);
+I=edge(I_gray,'canny',[0.01,0.09]);
 figure; imshow(I);
 
 %% Hough transform to detect lines
 [H, T, R] = hough(I);
-figure; %imshow(imadjust(mat2gray(H)))
+figure; imshow(imadjust(mat2gray(H)))
 
 %% houghpeaks - Identify peaks in Hough transform
 P = houghpeaks(H,10);

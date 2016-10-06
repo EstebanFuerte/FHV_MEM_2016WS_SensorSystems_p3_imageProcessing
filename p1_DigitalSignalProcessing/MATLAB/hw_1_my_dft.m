@@ -17,8 +17,10 @@ W(1,:)=1;
 
 for i=1:length(k)
     for h=1:length(n)
-        W(i,h)=(exp(-j*2*pi/N))^(-kn(i,h));
+        W(i,h)=(exp(-j*2*pi/N))^(kn(i,h));
     end
 end
-fftvalues=timevalues * W;   % DFT - discrete!
+W_altern = exp(-j*2*pi/N*kn);
+diff = W - W_altern
+fftvalues=timevalues * W_altern;   % DFT - discrete!
 end
