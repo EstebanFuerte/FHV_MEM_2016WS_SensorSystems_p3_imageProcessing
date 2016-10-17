@@ -58,3 +58,17 @@ R = abs(R);
 figure
 subplot(2,1,1); imshow(I);
 subplot(2,1,2); imshow(R,[]);
+
+%% Answer Question of Exam
+%What happens when the lower terms of F will be set to zero
+
+F(M/2-5:M/2+5,N/2-5:N/2+5)=0;
+% Apply filter again
+figure;
+imshow(log10(abs(F.*G)+10),[],'Colormap',jet); colorbar;
+R = ifft2(fftshift(F.*G));
+R = abs(R);
+figure
+subplot(2,1,1); imshow(I);
+subplot(2,1,2); imshow(R,[]);
+
