@@ -13,7 +13,7 @@ function y = fftcompare( x )
 
     X  = hw_1_my_dft( x ) ;
     XF =    fft( x ) ;
-    figure
+    %figure
     subplot( 2, 1, 1 ) ;
     stem( x ) ; grid on ;
     
