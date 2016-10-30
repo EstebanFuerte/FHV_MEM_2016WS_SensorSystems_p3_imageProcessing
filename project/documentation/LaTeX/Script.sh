@@ -10,6 +10,7 @@ pdflatex --output-directory=build -synctex=1 -interaction=$mode * >/dev/null
 echo PDFLatex
 pdflatex --output-directory=build -synctex=1 -interaction=$mode * >/dev/null
 echo PDFLatex
+pdflatex --output-directory=build -synctex=1 -interaction=$mode * >/dev/null
 
 echo Bibtex
 bibtex -terse build/*.aux 
