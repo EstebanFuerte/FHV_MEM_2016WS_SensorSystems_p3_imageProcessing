@@ -6,5 +6,30 @@
 /p3_imageProcessing/exam
 /p3_imageProcessing/literature
 /p3_imageProcessing/solution of homework and exercises
-/project
 /p1_DigitalSignalProcessing/literature
+*.bak
+project/documentation/LaTeX/SensorSystemsProject.acn
+*.aux
+project/documentation/LaTeX/SensorSystemsProject.blg
+*.glo
+project/documentation/LaTeX/SensorSystemsProject.glsdefs
+*.ist
+project/documentation/LaTeX/SensorSystemsProject.dvi
+project/documentation/LaTeX/SensorSystemsProject.log
+*.lot
+project/documentation/LaTeX/SensorSystemsProject.out
+*.gz
+project/documentation/LaTeX/SensorSystemsProject.toc
+project/documentation/LaTeX/SensorSystemsProject.bbl
+*.lof
+project/documentation/LaTeX/tex/ImplementationIssuses.pdf
+*.bbl
+project/documentation/LaTeX/tex/ProblemDescription.blg
+*.log
+project/documentation/LaTeX/tex/ProblemDescription.out
+project/literature/Face Detection - A Survey.pdf
+project/literature/On internal representations in face recognition systems.PDF
+project/projects2016.pdf
+project/literature/Face Recognition- A Literature Survey.pdf
+project/documentation/LaTeX/tex/ProblemDescription.pdf
+project/documentation/LaTeX/tex/ProblemDescription.dvi
