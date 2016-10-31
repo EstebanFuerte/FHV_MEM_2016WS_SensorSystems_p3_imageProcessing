@@ -54,11 +54,9 @@ N2 = ceil(N/2);     % half length of filter used for "circshift"!
 NSIG = length(signal) ;
 
 signalfma = zeros( size(signal)) ;
-for ii=1:NSIG
-    signalfma(ii)=signal(ii);
-    for j=1:(length(N)-1)
-        signalfma(ii)=signalfma(ii)+signal(ii+j);
-    end
+%%
+for ii=1:(NSIG-N)
+    signalfma(ii) = sum(signal(ii:(ii+(N-1))));
     signalfma(ii) = 1/N*signalfma(ii);
 end
 
@@ -79,7 +77,7 @@ signalfm = signal ;     % WRONG values; just for inizialization
 
 % ***********
 fm = (1/N*ones(1,N));
-signalfm = filter(fm,1,signal);
+signalfm = filter(fm,1,signal)
 % ***********
 % time shift the resulting signal for plot:
 signalfm = circshift(signalfm, -(N-N2-1) ) ;
@@ -93,8 +91,6 @@ freqz( fm, 1 ) ;
 
 %% Check the differences between the direct implementation and "filter"
 sigdiff = signalfma - signalfm;
-max(sigdiff)
-min(sigdiff)
 
 % ignore bordary effects at begin/end
 sigdiff(1:N) = 0 ;
