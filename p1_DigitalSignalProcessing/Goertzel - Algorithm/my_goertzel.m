@@ -4,7 +4,7 @@ N = length(signal);
 Y = zeros(length(freq),1)
 
 for n = 1:length(freq)
-    k = round(freq(n)*N);
+    k = round(freq(n));
     Wn = exp(-j*2*pi/N*k);
     coeff = 2*cos(k*2*pi/N);
     
