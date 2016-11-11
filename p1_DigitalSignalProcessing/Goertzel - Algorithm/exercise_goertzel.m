@@ -35,11 +35,7 @@
 %                941 Hz  |    *    |    0    |    #    |       
 %                        |_ _ _ _ _|_ _ _ _ _|_ _ _ _ _|  
 %                                                           
-
-%%
-clear all, close all, clc;
-
-%% First, let's generate the ten frequency pairs
+% First, let's generate the ten frequency pairs
 f1 = [697 770 852 941]; % Low frequency group
 f2 = [1209 1336 1477];  % High frequency group
 f = [ f1( 1 ) f2( 1 ) 
@@ -88,7 +84,6 @@ end
 % [list_of_frequency_intensities] = my_goertzel( soundsignal, list_of_frequency_indices )
 
 frequency_indices = [f1 f2]/Fs*(length(tones(:,1))-1) ;
-%%
 for i = 1:10
     subplot( 5,3,i ) ;
     
