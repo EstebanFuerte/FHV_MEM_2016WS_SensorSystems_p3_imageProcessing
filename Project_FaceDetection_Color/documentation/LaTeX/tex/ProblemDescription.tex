@@ -34,10 +34,17 @@ We decided to have a closer look on the face detection process because for the p
 According to \cite{FDASurvey} are \textbf{Image-based approaches} the moste robust techniques for gray images, but on the other side they need a lot of computation time by multiresolution window scanning.\\
 The \textbf{feature-based approaches} were the first attemps in the face detection history. They are built up simple and so they need less computation time, this enables these approaches access to real-time applications.
 
-The most interesting approach for us was \textit{Face detection based on color likelihood} approach (in figure \ref{FDaS} marked as \textit{Color}).
+The most interesting approach for us was \textit{Face detection based on color likelihood} approach (in figure \ref{FDaS} marked as \textit{Color}). Argumentation for this algorithm can be found in the section \ref{cbFd};
 
 
-\section{Color based face detection}
+\section{Color based face detection} \label{cbFd}
+According to the article \textit{A Robust Skin Color Based Face Detection Algorithm} of \cite{RobustSkinColorFD} following points argue for the color based case detection
+\begin{itemize}
+\item Color processing is much faster than other facial features
+\item Color based algorithm is orientation invariant, that means that a motion estimation is much easier.
+\item Color based algorithm is often the first step for detection, this algorithm is popular.
+\end{itemize}
+
 An application for the simple and real-time capable algorithmus face detection with color can be found in the articel  \textit{Face recognition: A literature survey} from \cite{FRLiteratureSurvey}
 \begin{quotation}
 \textit{In video conferencing systems, there is a need to automatically control the camera in
