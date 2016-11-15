@@ -1,0 +1,9 @@
+\contentsline {chapter}{List of Figures}{3}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Problem description}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Overview}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Face Detection}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Color likelihood approach}{5}{section.1.3}
+\contentsline {chapter}{\numberline {2}Literature Analysis}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Approach}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Literature analysis of the topic face detection based on color likelihood}{8}{section.2.2}
+\contentsline {chapter}{Bibliography}{9}{chapter*.6}
