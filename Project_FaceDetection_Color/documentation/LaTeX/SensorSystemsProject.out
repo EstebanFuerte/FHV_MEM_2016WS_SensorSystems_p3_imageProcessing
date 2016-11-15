@@ -6,4 +6,10 @@
 \BOOKMARK [0][-]{chapter.2}{Literature Analysis}{}% 6
 \BOOKMARK [1][-]{section.2.1}{Approach}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.2}{Literature analysis of the topic face detection based on color likelihood}{chapter.2}% 8
-\BOOKMARK [0][-]{chapter*.6}{Bibliography}{}% 9
+\BOOKMARK [0][-]{chapter.3}{Test scenario}{}% 9
+\BOOKMARK [1][-]{section.3.1}{Target}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.2}{Implementation steps}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.2.1}{Color based phase detection on a picture}{section.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.2.2}{Color based phase detection on a video}{section.3.2}% 13
+\BOOKMARK [2][-]{subsection.3.2.3}{Real-time Color based phase detection on a picture}{section.3.2}% 14
+\BOOKMARK [0][-]{chapter*.6}{Bibliography}{}% 15
