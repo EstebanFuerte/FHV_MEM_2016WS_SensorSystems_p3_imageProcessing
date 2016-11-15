@@ -1,0 +1,29 @@
+\documentclass[Bachelorarbeit.tex]{subfiles}
+\begin{document}
+% how to prove that the final implementation works
+\chapter{Test scenario}
+\section{Target}
+The target of the implementation is to use the video from a web cam to test the implemented color based face detection. The implemented code should as simple as possible, to achieve a real-time capable 
+
+\section{Implementation steps}
+Following steps will be done to test if the implemented solution is real-time capable.
+
+\subsection{Color based face detection on a picture}
+The first step is to test the algorithms on different pictures. For this following steps are scheduled:
+\begin{enumerate}
+\item Transform picture into the YCbCr color space.
+\item Find suitable threshold ranges for the YCbCr.
+\item Make Thresholding on the YCbCr to get a binary picture.
+\item Detecting phases out of skin regions.
+\item Draw boxes to identify the faces on the picture.
+\end{enumerate}
+\subsection{Color based face detection on a video}\label{CbVidoe}
+Use a web cam and test the implemented color based algorithm.
+\subsection{Real-time Color based face detection on a picture}
+There are three posibilities to test if the implemented solution is real-time capable.
+\begin{enumerate}
+\item Test it on a notebook and a webcam (same as section \ref{CbVidoe}).
+\item Calculate if the computation time is less enough for a micro controller like a Arduino.
+\item Implement the algorithm on a micro controller which is connected with a webcam.
+\end{enumerate}
+\end{document}
