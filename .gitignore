@@ -44,6 +44,9 @@ project/literature/Disertation_TrackingAndModelingFocusOfAttentionInMeetings.pdf
 project/literature/Face Detection - A Survey_comments.pdf
 p1_DigitalSignalProcessing/Goertzel - Algorithm/my_goertzel.m
 /p1_DigitalSignalProcessing/Goertzel - Algorithm/hagerMarkus
+<<<<<<< HEAD
+/Project_FaceDetection_Color/literature
+=======
 Project_FaceDetection_Color/meetingNotes/20161115_MoM_LR_Tobi.txt
 Project_FaceDetection_Color/documentation/LaTeX/SensorSystemsProject.out
 Project_FaceDetection_Color/documentation/LaTeX/SensorSystemsProject.toc
@@ -54,3 +57,4 @@ Project_FaceDetection_Color/documentation/LaTeX/SensorSystemsProject.synctex.gz(
 Project_FaceDetection_Color/documentation/LaTeX/SensorSystemsProject.toc
 Project_FaceDetection_Color/documentation/LaTeX/SensorSystemsProject.out
 Project_FaceDetection_Color/documentation/LaTeX/SensorSystemsProject.out
+>>>>>>> refs/remotes/origin/master
