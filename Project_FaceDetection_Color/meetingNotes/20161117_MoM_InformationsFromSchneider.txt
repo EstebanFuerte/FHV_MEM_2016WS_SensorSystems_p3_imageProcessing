@@ -1,0 +1,11 @@
+Next dates
+15.12.2016	3-4 sentence of the project description - to publish it 
+22.12.2016	10:00 - 12:15	Project End presentation - also plus discussion 
+22.12.2016	due date of the project documentation (not a bachelor theses, no scientific work - more a documentation)
+			more the own work, no background information etc.
+			all things which can realy assigned to the project
+			documentation of the key featuers, roughly the structure or algorithm (better understanding for Schneider Reinhard) and results
+12.01.2016	oral exam
+			discuss about theoretical topic in the course 
+			(explain diff between circular or fast convolution, dft, fft (whats behind) differing, problems D/A, A/D)
+			you have to look at literature (dsp guide)
