@@ -317,22 +317,22 @@ sort={#3}}
 %\addcontentsline{toc}{chapter}{\listtablename}
 
 \newpage
-}
+%}
 
-\newcommand{\glossaryAndBibliography}{
+%\newcommand{\glossaryAndBibliography}{
 % Anything following the further research must not have a chapternumber
-\renewcommand{\chaptername}{}
-\renewcommand{\thechapter}{}
+%\renewcommand{\chaptername}{}
+%\renewcommand{\thechapter}{}
 
 %Glossary
-\ifthenelse{\equal{\getLanguage}{english}} % prints just the list of acronyms
-  		{\printglossary[type=\acronymtype]}
-  		{\printglossary[type=\acronymtype, title=Abkürzungsverzeichnis]} 		
+%\ifthenelse{\equal{\getLanguage}{english}} % prints just the list of acronyms
+%  		{\printglossary[type=\acronymtype]}
+%  		{\printglossary[type=\acronymtype, title=Abkürzungsverzeichnis]} 		
   	
   	
-\ifthenelse{\equal{\getLanguage}{english}} % prints just the list of acronyms
-  		{\printglossary}
-  		{\printglossary[title=Glossar]} 	 % if no option is supplied the default glossary is printed.
+%\ifthenelse{\equal{\getLanguage}{english}} % prints just the list of acronyms
+%  		{\printglossary}
+%  		{\printglossary[title=Glossar]} 	 % if no option is supplied the default glossary is printed.
 
 % Bibliography
 \newpage
