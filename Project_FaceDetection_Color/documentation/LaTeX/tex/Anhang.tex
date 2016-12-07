@@ -1,5 +1,6 @@
 \documentclass[Bachelorarbeit.tex]{subfiles}
-\begin{appendix}
+\begin{document}
+
 \chapter{Appendix}
 If not otherwise noted pictures are taken from \textit{Wikicommons}. http://commons.wikimedia.org
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
@@ -7,12 +8,90 @@ If not otherwise noted pictures are taken from \textit{Wikicommons}. http://comm
 %  		{\addcontentsline{toc}{chapter}{Appendix}}
 %  		{\addcontentsline{toc}{chapter}{Anhang}} 
 \section{YCbCr-Color-Space}  	
-\subsection{Procedure}
-\subsection{Examples}
+\subsection{Color Spaces}
+A color space is a mathematical model to represent color information out of a picture. There were several color models available:
+\begin{itemize}
+\item RGB based color space (RGB, normalized RGB)
+\item Hue based color space (HSI, HSV and HSL)
+\item Luminance based color space (YCbCr, YIQ and YUV)
+\item Perceptually uniform color space (CIEXYZ, CIELAB, and CIELUV)
+\end{itemize}
+
+Luminance based color space has the split the image into intensity (luminance) informations and color (chrominance) informations. The YCbCr space was chosen because several articles recommended this color space for video applications (because of its speed).
+\medskip
+The letters of YCbCr represents:
+\begin{itemize}
+\item Y: luminance
+\item Cb: blue-yellow chrominance
+\item Cr: red-green chrominance
+\end{itemize}
+
+
+
+\newpage
+\subsection{YCbCr skin color}
+A color picture leads to an YCbCr color space like in figure \ref{YCbCr_tobi_withoutThresholding}.
+
+\begin{figure}[!h]
+\centering
+\subfigure[Original]{
+\includegraphics[height=4cm]{./img/ycbcr/tobi_WithoutThresholding}
+}\subfigure[YCbCr color space]{
+\includegraphics[height=4cm]{./img/ycbcr/Tobi_full}}
+\caption{YCbCr - without Thresholding - MEM3 student}\label{YCbCr_tobi_withoutThresholding}
+\end{figure}
+
+By applying the determined thresholds(see section \ref{sec:ColorThre}) the skin pixels can be seen clustered in a region of the YCBCR space (see figure \ref{YCbCr_tobi_withThresholding}).
+
+\begin{figure}[!h]
+\centering
+\subfigure[Thresholded picture]{
+\includegraphics[height=4cm]{./img/ycbcr/tobi_Thresholding}
+}\subfigure[YCbCr color space]{
+\includegraphics[height=4cm]{./img/ycbcr/Tobi_thresholding_3d_single}}
+\caption{YCbCr - with Thresholding - MEM3 student}\label{YCbCr_tobi_withThresholding}
+\end{figure}
+
+\medskip
+A comparison between the whole coloured picture and the threshold picture (see figure \ref{comparisonOfThresholding}) shows that the relevant information of the skin color is in the chrominance (Cb and Cr) and independent of the luminance (Y).
+
+\begin{figure}[!h]
+\centering
+\subfigure[Thresholded picture]{
+\includegraphics[height=4cm]{./img/ycbcr/Tobi_thresholding_3d}
+}\subfigure[YCbCr color space]{
+\includegraphics[height=4cm]{./img/ycbcr/Tobi_thresholding_cb_cr}}
+\caption[YCbCr - comparison - full colored and thresholded]{YCbCr - comparison between the full colord picture (blue dots) and the thresholded picture (red dots) - MEM3 student}\label{comparisonOfThresholding}
+\end{figure}
+
+\medskip
+Interesting is that independent of the skin type (white, black or yellow) the relevant skin pixels are always at the same region. To show this the pictures of figure \ref{testPictures} were thresholded and compared see figure yy.
+
+\begin{figure}[!h]
+\centering
+\subfigure[MEM3 student]{
+\includegraphics[height=3.5cm]{../../MATLAB/pictures/me1_mod}
+}
+\subfigure[Barack Obama]{
+\includegraphics[height=3.5cm]{../../MATLAB/pictures/obama}}
+\subfigure[Jackie Chan]{
+\includegraphics[height=3.5cm]{../../MATLAB/pictures/JackieChan}}
+\caption{Test pictures}\label{testPictures}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\subfigure[Thresholded picture]{
+\includegraphics[height=4cm]{./img/ycbcr/Comparison_3Pics_3d}
+}\subfigure[YCbCr color space]{
+\includegraphics[height=4cm]{./img/ycbcr/Comparison_3Pics_cb_cr}}
+\caption[YCbCr - comparison - MEM3 student, Chan and Obama]{YCbCr - comparison between the full colord picture of MEM3 student (blue dots), thresholded MEM3 student (red dots), thresholded Jackie Chan (yellow dots) and thresholded Barack Obama (black dots).}
+\label{testPicturesComparison}
+\end{figure}
 
 \newpage
 
-\section{Color threshold}  	
+\section{Color threshold}\label{sec:ColorThre}  	
 \subsection{Procedure}
 According to different literature (Real Time Detection and Tracking of Human Face using Skin Color Segmentation and Region Properties \cite{RTFaceDetection}, Face Detection Using Color Thresholding, and Eigenimage Template Matching \cite{RTFaceDetection} and A Robust Skin Color Based Face Detection Algorithm \cite{RobustSkinColorFD}) the thresholds must be found with an try and error procedure.
 
@@ -52,7 +131,7 @@ The next steps is to modify the binary picture (by removing the small black pixe
 \begin{figure}[!h]
 \centering
 \includegraphics[width=10cm]{./img/thresholds/obama_thresholds.PNG}
-\caption{colorThresholder - Barrack Obama - with thresholds : 105 $>$ cb $<$ 120 and 140 $>$ cr $<$ 165}
+\caption[colorThresholder - Barrack Obama - with thresholds]{colorThresholder - Barrack Obama - with thresholds : 105 $>$ cb $<$ 120 and 140 $>$ cr $<$ 165}
 \label{obamaThres}
 \end{figure}
 
@@ -87,7 +166,7 @@ imshow(binary_pic);
 \begin{figure}[!h]
 \centering
 \includegraphics[width=10cm]{./img/thresholds/obama_matlab.PNG}
-\caption{colorThresholder - Barrack Obama - figure out of matlab code \ref{matlabColorTresholding}}
+\caption[Binary Picture - Barrack Obama]{Binary Picture - Barrack Obama - figure out of matlab code \ref{matlabColorTresholding}}
 \label{obamaThres}
 \end{figure}
 
@@ -113,4 +192,4 @@ imshow(binary_pic);
 
 
 	
-\end{appendix}
+\end{document}
