@@ -3,13 +3,13 @@
 % how to prove that the final implementation works
 \chapter{Test scenario}
 \section{Target}
-The target of the implementation is to use the video from a web cam to test the implemented color based face detection. The implemented code should as simple as possible, to achieve a real-time capable 
+The target of the implementation is to use the video from a web cam to test the implemented color based face detection. The implemented code should as simple as possible, run the code on a Raspberry Pi.
 
 \section{Implementation steps}
 Following steps will be done to test if the implemented solution is real-time capable.
 
 \subsection{Color based face detection on a picture}
-The first step is to test the algorithms on different pictures. For this following steps are scheduled:
+The first step is to test the algorithms on different pictures (private pictures and pictures from \href{https://commons.wikimedia.org/wiki/Main_Page}{WIKIMEDIA COMMONS}). For this following steps are scheduled:
 \begin{enumerate}
 \item Transform picture into the YCbCr color space.
 \item Find suitable threshold ranges for the YCbCr.
@@ -17,14 +17,20 @@ The first step is to test the algorithms on different pictures. For this followi
 \item Detecting faces out of skin regions.
 \item Draw boxes to identify the faces on the picture.
 \end{enumerate}
+
 \subsection{Color based face detection on a video}\label{CbVidoe}
 Use a web cam and test the implemented color based algorithm.
-\subsection{Real-time Color based face detection on a picture}
-There are three possibilities to test if the implemented solution is real-time capable.
-\begin{enumerate}
-\item Test it on a notebook and a web cam (same as section \ref{CbVidoe}).
-\item Calculate if the computation time is less enough for a micro controller like a Arduino.
-\item Implement the algorithm on a micro controller which is connected with a web cam.
-\end{enumerate}
-The decision which method will be implemented/tested depends on the time reserve after the points before were implemented.
+
+\subsection{Color based face detection on a Raspberry pi}
+In this project a Raspberry Pi Model B2 and the Raspberry Pi camera module V? will be used.
+
+\subsubsection{Simulink Model Image}
+The first step is to transform the developed algorithm from MATLAB to Simulink. The \textit{Image Processing Toolbox} provides boxes which covers some needed features. This boxes will be used to achieve a high performance (assumption is that the toolbox from Mathworks is as efficient as possible). 
+
+\subsubsection{Simulink Model on host PC and Hardware from Raspberry Pi}
+In the next step a Simulink model should be created which can be deployed on the Raspberry Pi and check the results (original camera video frames and face detected video frames) with figures/Displays on the host PC.
+
+\subsubsection{Simulink Model on Raspberry Pi}
+The final step is to use the developed Simulink model to run it in a Standalone version on the Raspberry Pi. To see the result the modified video (including face detection) will be streamed over the internal HDMI port to a Display or a beamer. 
+
 \end{document}
