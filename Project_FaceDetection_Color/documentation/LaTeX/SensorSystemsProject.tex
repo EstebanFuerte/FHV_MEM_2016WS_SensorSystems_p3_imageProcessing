@@ -1,7 +1,10 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage{./sty/fhv}
-\usepackage[numbered]{./sty/mcode}
+\usepackage[]{./sty/mcode}
+\usepackage{titlesec}
 \makeglossaries
+
+%\titleclass{\chapter}{straight}
 
 % Settings
 \bibliographystyle{apalike}  % This is quite close to the fhv standard
@@ -30,7 +33,7 @@
 
 % final generated information
 %\glossaryAndBibliography
-%\newpage
+\newpage
 \appendix
 \subfile{./tex/Anhang.tex}
 \subfile{./tex/Anhang_MATLABScrips.tex}
