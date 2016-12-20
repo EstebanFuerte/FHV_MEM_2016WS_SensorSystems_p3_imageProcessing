@@ -4,11 +4,19 @@
 
 \section{Findings}
 \begin{itemize}
-\item The 
+\item Resolution of the image/video must be defined, because the resolution has an influence to the amount of blob pixels (area property) and the computation time.
+\item Thresholding values are various for different camera types. For every camera the thresholds must be found (Webcam has other thresholds than the raspberry pi camera module).
+\item Lighting conditions can affect the algorithm – e.g. shadows (also depending on the used camera).
+\item Hands and other skin regions are often interpreted as faces, without any additional filtering (like concerning the ratio of the rectangular).
+\item Adjacent faces melt to one big rectangle.
+\item Simulink blocks don't support all region properties (e.g. no euler number)in contrast to the Matlab algorithms. For some applications/ situations additional morphological operations are necessary.
+
 \end{itemize}
 
 \section{Improvements}
 \begin{itemize}
-\item The 
+\item To increase the speed the Raspberry Pi 3, or other powerful embedded hardware, instead of the Raspberry Pi 2 can be used.
+\item To increase the speed, the algorithm should be programmed in PYTHON.
+\item To get rid of the resolution problem (different amount of blob analysis), a function which calculates the resolution depending parameters (e.g. Area) can be implemented.
 \end{itemize}
 \end{document}
